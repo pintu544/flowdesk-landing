@@ -11,6 +11,7 @@
   <meta property="og:description" content="The shared inbox and helpdesk SaaS that helps small support teams answer every customer faster, together." />
   <meta property="og:url" content="https://sankar-assignment.vercel.app/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='2' y='3' width='20' height='14' rx='3' fill='%230c6b5c'/%3E%3Cpath d='M6 8.5h8M6 12h5' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M8 21l3.2-4H17' stroke='%230c6b5c' stroke-width='1.8' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -44,7 +45,7 @@
     <!-- ============ Hero ============ -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy" data-reveal>
           <p class="eyebrow">Helpdesk for growing teams</p>
           <h1>Every customer conversation, <span class="accent">one calm inbox.</span></h1>
           <p class="lede">Flowdesk brings your support email, chat and social messages into one shared inbox — so your team answers faster, never replies twice, and never loses a customer in the shuffle.</p>
@@ -56,7 +57,7 @@
         </div>
 
         <!-- Product visual: a lightweight mock of the Flowdesk inbox, built with HTML/CSS -->
-        <div class="hero-visual" role="img" aria-label="Preview of the Flowdesk shared inbox showing a customer ticket being answered">
+        <div class="hero-visual" role="img" aria-label="Preview of the Flowdesk shared inbox showing a customer ticket being answered" data-reveal>
           <div class="mock-window">
             <div class="mock-titlebar"><span></span><span></span><span></span><em>Flowdesk — Inbox</em></div>
             <div class="mock-body">
@@ -65,7 +66,6 @@
                 <div class="mock-ticket active"><strong>Refund for order #8412</strong><small>Priya · 2 min ago</small></div>
                 <div class="mock-ticket"><strong>Login issue on mobile</strong><small>Daniel · 18 min ago</small></div>
                 <div class="mock-ticket"><strong>Change delivery address</strong><small>Meera · 41 min ago</small></div>
-                <div class="mock-ticket"><strong>Invoice copy request</strong><small>Tom · 1 hr ago</small></div>
               </aside>
               <div class="mock-thread">
                 <p class="mock-thread-head">Refund for order #8412 <span class="pill">Assigned to you</span></p>
@@ -74,6 +74,10 @@
                 <div class="mock-reply">Write a reply… <span class="mock-send">Send</span></div>
               </div>
             </div>
+          </div>
+          <div class="mock-stat" aria-hidden="true">
+            <strong>12 min</strong>
+            <span>median first response — down 38% since switching to Flowdesk</span>
           </div>
         </div>
       </div>
@@ -89,7 +93,7 @@
         <h2 class="center">Everything a small support team needs</h2>
         <p class="section-sub center">No bloated enterprise modules. Just the tools that help a team of 2–20 answer customers well.</p>
 
-        <div class="card-grid">
+        <div class="card-grid" data-reveal>
           <article class="card">
             <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
             <h3>One shared inbox</h3>
@@ -129,7 +133,7 @@
       <div class="container">
         <p class="eyebrow center">How it works</p>
         <h2 class="center">From scattered messages to a calm queue in three steps</h2>
-        <div class="steps">
+        <div class="steps" data-reveal>
           <article class="step">
             <span class="step-num" aria-hidden="true">1</span>
             <h3>Connect your channels</h3>
@@ -206,6 +210,62 @@
       </div>
     </section>
 
+    <!-- ============ Testimonials ============ -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <p class="eyebrow center">Loved by support teams</p>
+        <h2 class="center">Small teams, calmer inboxes</h2>
+        <div class="card-grid quote-grid">
+          <figure class="card quote" data-reveal>
+            <blockquote>We stopped losing weekend emails entirely. Two of us now handle what used to take four, and customers mention the faster replies unprompted.</blockquote>
+            <figcaption><strong>Ananya Rao</strong><span>Support Lead, KiranaKart (D2C retail, 6-person team)</span></figcaption>
+          </figure>
+          <figure class="card quote" data-reveal>
+            <blockquote>The collision warnings alone are worth it. No more two agents answering the same parent about the same school fee — it just quietly works.</blockquote>
+            <figcaption><strong>Daniel Mathew</strong><span>Founder, StudyNest (ed-tech, 3-person team)</span></figcaption>
+          </figure>
+          <figure class="card quote" data-reveal>
+            <blockquote>Setup genuinely took one afternoon, including the help centre. Our ticket volume dropped by a third in the first month.</blockquote>
+            <figcaption><strong>Sara Lindqvist</strong><span>Operations Manager, BluePeak (SaaS, 14-person team)</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-alt" id="faq">
+      <div class="container faq-wrap">
+        <p class="eyebrow center">FAQ</p>
+        <h2 class="center">Questions, answered</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" aria-expanded="false" aria-controls="faqA1" id="faqQ1">How long does setup take?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faqA1" role="region" aria-labelledby="faqQ1" hidden>
+              <p>Most teams connect their support email and chat widget in under an hour. Importing history from another helpdesk is self-serve on Growth and Scale plans.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" aria-expanded="false" aria-controls="faqA2" id="faqQ2">Can I try Flowdesk before paying?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faqA2" role="region" aria-labelledby="faqQ2" hidden>
+              <p>Yes — every plan starts with a 14-day free trial with full features, and no credit card is required. If you do nothing, the trial simply ends.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" aria-expanded="false" aria-controls="faqA3" id="faqQ3">What happens to our data if we cancel?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faqA3" role="region" aria-labelledby="faqQ3" hidden>
+              <p>You can export every conversation, contact and attachment at any time, including after cancellation. We delete remaining data 30 days after a workspace closes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q"><button type="button" aria-expanded="false" aria-controls="faqA4" id="faqQ4">Does Flowdesk work for a team of two?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faqA4" role="region" aria-labelledby="faqQ4" hidden>
+              <p>It is built for exactly that. Starter covers up to 5 agents with the shared inbox, assignments and saved replies — the features small teams actually use daily.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ Demo request / contact ============ -->
     <section class="section section-alt" id="demo">
       <div class="container demo-grid">
@@ -220,25 +280,25 @@
           </ul>
         </div>
 
-        <form id="demoForm" class="demo-form" novalidate>
+        <form id="demoForm" class="demo-form" novalidate data-reveal>
           <div class="field">
             <label for="fName">Full name</label>
-            <input id="fName" name="name" type="text" placeholder="e.g. Priya Sharma" autocomplete="name" />
+            <input id="fName" name="name" type="text" placeholder="e.g. Priya Sharma" autocomplete="name" aria-describedby="eName" />
             <p class="error" id="eName" role="alert"></p>
           </div>
           <div class="field">
             <label for="fEmail">Work email</label>
-            <input id="fEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" />
+            <input id="fEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" aria-describedby="eEmail" />
             <p class="error" id="eEmail" role="alert"></p>
           </div>
           <div class="field">
             <label for="fCompany">Company</label>
-            <input id="fCompany" name="company" type="text" placeholder="Company name" autocomplete="organization" />
+            <input id="fCompany" name="company" type="text" placeholder="Company name" autocomplete="organization" aria-describedby="eCompany" />
             <p class="error" id="eCompany" role="alert"></p>
           </div>
           <div class="field">
             <label for="fSize">Support team size</label>
-            <select id="fSize" name="size">
+            <select id="fSize" name="size" aria-describedby="eSize">
               <option value="">Select team size</option>
               <option>1–5</option>
               <option>6–20</option>
@@ -252,7 +312,7 @@
             <textarea id="fMsg" name="message" rows="3" placeholder="e.g. Replies get duplicated when two agents answer the same email"></textarea>
           </div>
           <button class="btn btn-primary btn-block" type="submit">Request my demo</button>
-          <p class="form-success" id="formSuccess" role="status" hidden>Thanks — your demo request is in. We will email you within one business day to schedule it.</p>
+          <p class="form-success" id="formSuccess" role="status" tabindex="-1" hidden>Thanks — your demo request is in. We will email you within one business day to schedule it.</p>
         </form>
       </div>
     </section>

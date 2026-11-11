@@ -73,6 +73,7 @@
     var ok = result === true;
     field.error.textContent = ok ? "" : result;
     field.input.classList.toggle("invalid", !ok);
+    field.input.setAttribute("aria-invalid", String(!ok));
     return ok;
   }
 
@@ -94,6 +95,34 @@
     // No backend in this demo: confirm in-page and reset for the next request.
     success.hidden = false;
     success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    success.focus({ preventScroll: true });
     form.reset();
   });
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq-q button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var panel = document.getElementById(button.getAttribute("aria-controls"));
+      var open = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+  });
+
+  /* ---------- Scroll reveal (progressive: content is visible without JS,
+     and stays put for reduced-motion users via the CSS media query) ------- */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
 })();
